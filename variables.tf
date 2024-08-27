@@ -113,3 +113,9 @@ variable "aditional_iam_policies" {
   type        = list(any)
   default     = []
 }
+
+variable "ebs_encrypted" {
+  description = "EBS Encrypt true or false"
+  type        = bool
+  default     = true
+}
