@@ -37,24 +37,6 @@ variable "instance_type" {
   type        = string
   description = "EC2 Instance type"
 }
-
-variable "sg_ingress_networks" {
-  type        = list(any)
-  description = "Network list with ingress permission"
-  default     = []
-}
-
-variable "sg_ingress_rules" {
-  type        = list(any)
-  description = "Protcols list with ingress permission"
-  default     = []
-}
-
-variable "sg_egress_rules" {
-  type        = list(any)
-  description = "Protcols list with egress permission"
-}
-
 variable "private_ip" {
   description = "EC2 Fixed IP"
   type        = string
@@ -102,18 +84,11 @@ variable "security_groups" {
   default     = []
 }
 
-variable "sg_ingress_with_cidr_blocks" {
-  description = "Configure CIDR blocks for ingress rules."
-  type        = list(any)
-  default     = []
-}
-
 variable "aditional_iam_policies" {
   description = "Set additional ARN policies for the EC2 Instance"
   type        = list(any)
   default     = []
 }
-
 variable "ebs_encrypted" {
   description = "EBS Encrypt true or false"
   type        = bool
